@@ -1,0 +1,22 @@
+<form novalidate 
+  [formGroup]="emailForm"> 
+  <div class="form-group" [ngClass]="{'has-danger': 
+    (emailForm.get('email').touched || emailForm.get('email').dirty) 
+    && !emailForm.get('email').valid }"> 
+    
+    <lx-label [labelMsgId]='labelMsgId' [meta]='meta'></lx-label>
+    <input 
+      formControlName='email'
+      class='form-control'
+      id='emailId' 
+      placeholder='{{messagesService.msg(placeholderMsgId)}}' />
+      <control-messages [control]="emailForm.controls.value"></control-messages>
+  </div>
+</form>
+
+<br>Dirty: {{ emailForm.dirty }} 
+<br>Touched: {{ emailForm.touched }}
+<br>Valid: {{ emailForm.valid }}
+<br>emailForm.value.email: {{ emailForm.value.email | json }}
+
+

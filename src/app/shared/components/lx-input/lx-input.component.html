@@ -1,0 +1,19 @@
+<p>
+  lx-input works!
+</p>
+
+<input #in 
+  type="text" 
+  [attr.id]="inputId" 
+  [value]="valueAsString" 
+  [attr.size]="size" 
+  [attr.maxlength]="maxlength" 
+  [attr.placeholder]="placeholder" 
+  [disabled]="disabled" 
+  [readonly]="readonly"
+  (keydown)="onInputKeydown($event)" 
+  (keyup)="onInput($event,in.value)" 
+  (keypress)="onInputKeyPress($event)" 
+  (blur)="onInputBlur($event)" 
+  (change)="handleChange($event)" 
+  (focus)="onFocus()">
